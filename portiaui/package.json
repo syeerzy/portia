@@ -54,5 +54,8 @@
     "ember-run-raf": "1.1.2",
     "ember-truth-helpers": "^1.2.0",
     "loader.js": "^4.0.1"
+  },
+  "dependencies": {
+    "types": "^0.1.1"
   }
 }

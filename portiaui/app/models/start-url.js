@@ -31,7 +31,7 @@ const StartUrl = Ember.Object.extend({
 const GeneratedUrl = StartUrl.extend({
     type: 'generated',
     isGenerated: true,
-    optionsTitle: 'URL Generation',
+    optionsTitle: '分段 URL',
     componentName: 'project-structure-spider-generated-url',
     optionsComponentName: 'generated-url-options',
 
@@ -74,7 +74,7 @@ const GeneratedUrl = StartUrl.extend({
 
 const FeedUrl = StartUrl.extend({
     type: 'feed',
-    optionsTitle: 'Feed',
+    optionsTitle: '提要',
     componentName: 'project-structure-spider-feed-url',
     optionsComponentName: 'feed-url-options',
 

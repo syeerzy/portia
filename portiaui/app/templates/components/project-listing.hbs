@@ -2,34 +2,29 @@
     {{#tree-list-item hasChildren=true as |options|}}
         {{#if (eq options.section "item")}}
             {{#list-item-text class="title project-listing"}}
-                Project
+                项目
                 {{#animation-container
                     hide=isPublished
                     class="inline project-changes"
                     setHeight=false
                 }}
-                    {{#link-to 'projects'}}Show all projects{{/link-to}}
+                    {{#link-to 'projects'}}显示所有项目{{/link-to}}
                 {{/animation-container}}
                 {{#animation-container hide=notPublished id="project-changes-info" class="inline project-changes" setHeight=false}}
-                    Not published
+                    未发布
                     {{#help-icon tooltipClasses="tooltip-wide"}}
-                        Not published
+                        未发布
                         <p>
-                            This project has changes that have not yet been published.
+                            这个项目的变化还没有公布.
                         </p>
                         <p>
-                            When you make changes in Portia a private workspace is created for your
-                            user, separate from the rest of the project. Other users cannot see
-                            these changes until they are published, and you cannot see changes that
-                            were published by other users after you started making changes.
+                            当您在蜘蛛网中进行更改时，为您的用户创建一个私有的工作区，与项目的其余部分分开。其他用户无法看到这些更改，直到它们被发布，而且您无法看到其他用户在您开始更改之后发布的更改.
                         </p>
                         <p>
-                            To run a spider or make your changes visible to other users you must
-                            first publish ({{icon-button icon='publish'}}) the changes.
+                            要运行一个蜘蛛或使您的更改对其他用户可见，您必须首先发布 ({{icon-button icon='publish'}}) 变化.
                         </p>
                         <p>
-                            To clean your private workspace, and get back to the most recently
-                            published version of your project, you can discard your changes
+                            要清理您的私有工作空间，并回到最近发布的项目版本，您可以放弃您的更改
                             ({{icon-button icon='rollback'}}).
                         </p>
                     {{/help-icon}}
@@ -54,20 +49,20 @@
                                          options.closeMenu)}}>
                             {{list-item-icon
                               class="icon"
-                              icon="publish"}}Publish project
+                              icon="publish"}}发布项目
                         </a></li>
                         <li><a {{action (chain-actions (action 'discard')
                                          options.closeMenu)}}>
                             {{list-item-icon
                               class="icon"
-                              icon="rollback"}}Discard changes
+                              icon="rollback"}}放弃更改
                         </a></li>
                     {{/if}}
                     <li> <a href={{downloadUrl}} target='_blank'>
-                        {{list-item-icon class="icon" icon="download"}}Download as Portia
+                        {{list-item-icon class="icon" icon="download"}}下载蜘蛛网
                     </a> </li>
                     <li><a href={{downloadCodeUrl}} target='_blank'>
-                        {{list-item-icon class="icon" icon="code"}}Download as Scrapy
+                        {{list-item-icon class="icon" icon="code"}}下载Scrapy
                     </a> </li>
                 {{/list-item-icon-menu}}
                 <div class={{if isPulsing 'droplet'}}></div>

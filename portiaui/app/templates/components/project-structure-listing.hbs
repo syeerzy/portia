@@ -2,20 +2,18 @@
     {{#tree-list-item hasChildren=true as |options|}}
         {{#if (eq options.section "item")}}
             {{#list-item-text class="title"}}
-              Spider{{#animation-container class="inline" hide=currentSpider setHeight=false}}s {{/animation-container}}&nbsp;{{pagination}}
+              蜘蛛{{#animation-container class="inline" hide=currentSpider setHeight=false}}{{/animation-container}}&nbsp;{{pagination}}
                 {{#animation-container class="inline" setHeight=false}}
                     {{#help-icon}}
-                        Spiders
+                        蜘蛛
                         <p>
-                            A spider crawls web pages to extract data.
+                            蜘蛛爬行网页来抽取数据.
                         </p>
                         <p>
-                            It is most common to create a spider for each website you wish to crawl, but
-                            a single spider can also crawl more than one website.
+                            最常见的是为你想要爬的每个网站创建一个蜘蛛，但是一只蜘蛛也可以爬不止一个网站.
                         </p>
                         <p>
-                            To create a spider first visit a web page that you would like to start
-                            crawling from.
+                            要创建一个爬行器，首先访问一个您想要从它开始爬行的web页面.
                         </p>
                     {{/help-icon}}
                 {{/animation-container}}
@@ -24,7 +22,7 @@
             {{#if currentSpider}}
                 {{#animation-container}}
                     {{#link-to 'projects.project' project class='inline project-change'}}
-                        Show all spiders
+                        显示所有蜘蛛
                     {{/link-to}}
                 {{/animation-container}}
             {{else}}
@@ -35,14 +33,12 @@
         {{else if (eq options.section "subtrees")}}
             {{#tree-list-item hide=(or project.spiders.isPending project.spiders.length) as |options|}}
                 {{#list-item-text class="text-center"}}
-                    This project has no spiders
+                    这个项目未启动蜘蛛
                 {{/list-item-text}}
             {{/tree-list-item}}
             {{#tree-list-item hide=(or project.spiders.isPending project.spiders.length) class="help" as |options|}}
                 <div class="alert alert-info" role="alert">
-                    <p>
-                        To create a spider first visit a web page that you would like to start
-                        crawling from.
+                    <p>要创建一个爬行器，首先访问一个您想要从它开始爬行的web页面
                     </p>
                 </div>
             {{/tree-list-item}}
@@ -92,20 +88,18 @@
     {{#tree-list-item hasChildren=true as |options|}}
         {{#if (eq options.section "item")}}
             {{#list-item-text class="title"}}
-                Data Format{{#animation-container class="inline" hide=currentSchema setHeight=false}}s{{/animation-container}}
+                数据格式{{#animation-container class="inline" hide=currentSchema setHeight=false}}{{/animation-container}}
                 {{#animation-container class="inline" setHeight=false}}
                     {{#help-icon}}
-                        Data Formats
+                        数据格式
                         <p>
-                            A data format describes the data that you want to extract.
+                            数据格式描述您想要抽取的数据.
                         </p>
                         <p>
-                            Spiders can share a data format to extract the same logical data type from
-                            different web pages.
+                            蜘蛛可以共享一个数据格式，从不同的web页面中抽取相同的逻辑数据类型.
                         </p>
                         <p>
-                            You can create data formats in advance, but you can also create them later,
-                            while annotating the data on a web page.
+                            您可以提前创建数据格式，但是您也可以在稍后创建它们，同时在web页面上标注数据.
                         </p>
                     {{/help-icon}}
                 {{/animation-container}}
@@ -113,18 +107,18 @@
             {{#if currentSchema}}
                 {{#animation-container}}
                     {{#link-to 'projects.project' project class='inline project-change'}}
-                        Show all schemas
+                        显示所有模式
                     {{/link-to}}
                 {{/animation-container}}
             {{else}}
-                {{#tooltip-container tooltipFor="add-schema-button" text="Create a new Schema" tooltipContainer='body'}}
+                {{#tooltip-container tooltipFor="add-schema-button" text="创建一个新模式" tooltipContainer='body'}}
                     {{list-item-icon id="add-schema-button" icon='add' action=(action 'addSchema')}}
                 {{/tooltip-container}}
             {{/if}}
         {{else if (eq options.section "subtrees")}}
             {{#tree-list-item hide=(or project.schemas.isPending project.schemas.length) as |options|}}
                 {{#list-item-text class="text-center"}}
-                    This project has no data formats
+                    这个项目没有数据格式
                 {{/list-item-text}}
             {{/tree-list-item}}
             {{#each project.schemas as |schema|}}
@@ -132,7 +126,7 @@
                     {{#link-to 'projects.project.schema' schema}}
                         {{#if schema.default}}
                             {{#help-icon icon='default-add' placement='right' classes='help-icon indentation-spacer'}}
-                                This Data Format will be used for new samples by default
+                                默认情况下，此数据格式将用于新样本
                             {{/help-icon}}
                         {{else}}
                             {{indentation-spacer}}
@@ -144,16 +138,16 @@
                         {{#list-item-icon-menu icon='vertical-ellipsis' as |options|}}
                             {{#if schema.default}}
                                 <li {{action 'removeSchemaDefault' schema}}><a>
-                                {{list-item-icon class="icon" icon="default-remove"}}Remove as Default
+                                {{list-item-icon class="icon" icon="default-remove"}}删除默认值
                                 </a></li>
                             {{else}}
                                 <li {{action 'setSchemaDefault' schema}}><a>
-                                {{list-item-icon class="icon" icon="default-add"}}Set as Default
+                                {{list-item-icon class="icon" icon="default-add"}}设成默认
                                 </a></li>
                             {{/if}}
                             {{dropdown-delete
                               onDelete=(action 'removeSchema' schema)
-                              text='Delete Schema'
+                              text='删除模式'
                               disabled=(gt schema.items.length 0)
                             }}
                         {{/list-item-icon-menu}}

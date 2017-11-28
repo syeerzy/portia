@@ -15,7 +15,7 @@ module.exports = function(defaults) {
     app.import('bower_components/bootstrap-sass/assets/javascripts/bootstrap/tooltip.js');
     app.import('bower_components/cookie/cookie.min.js');
     app.import('bower_components/jquery-color/jquery.color.js');
-    app.import('bower_components/moment/min/moment.min.js');
+    app.import('bower_components/moment/min/moment-with-locales.min.js');
     app.import('bower_components/uri.js/src/URI.min.js');
     app.import('bower_components/css-escape/css.escape.js');
 

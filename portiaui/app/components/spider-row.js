@@ -31,7 +31,7 @@ export default Ember.Component.extend({
     }),
 
     notifyError(spider) {
-        const msg = `Renaming the spider '${spider.get('id')}' failed.`;
+        const msg = `重命名 '${spider.get('id')}' 失败。`;
         this.get('notificationManager').showErrorNotification(msg);
         spider.set('name', spider.get('id'));
     },
@@ -40,8 +40,7 @@ export default Ember.Component.extend({
         validateSpiderName(spider, name) {
             const nm = this.get('notificationManager');
             if(!/^[a-zA-Z0-9][a-zA-Z0-9_\.-]*$/.test(name)) {
-                nm.showWarningNotification(`Invalid spider name.
-                    Only letters, numbers, underscores, dashes and dots are allowed.`);
+                nm.showWarningNotification(`无效的蜘蛛的名字。只允许字母、数字、下划线、破折号和圆点.`);
                 return false;
             }
             if (spider.get('id') === name) {
@@ -49,8 +48,7 @@ export default Ember.Component.extend({
             }
             const spiders = this.get('project.spiders').mapBy('id');
             if(spiders.indexOf(name) >= 0) {
-                nm.showWarningNotification(`Invalid spider name.
-                    A spider already exists with the name "${name}"`);
+                nm.showWarningNotification(`无效的蜘蛛的名字。已经有一只蜘蛛的名字了 "${name}"`);
                 return false;
             }
             return true;

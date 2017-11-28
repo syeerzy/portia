@@ -33,8 +33,8 @@ export function initialize(applicationInstance) {
         }
 
         const instructions = logged ?
-            "Our developers have already been notified." :
-            "Please notify the developers. Details have been logged to the console.";
+            "我们的开发人员已经收到通知." :
+            "请通知开发人员。详细信息已经登录到控制台.";
         let isDeleted = err => (
             err.message &&
             (/event `(didSetProperty|deleteRecord)`.*in state root\./.test(err.message) ||
@@ -66,8 +66,8 @@ export function initialize(applicationInstance) {
         } else {
             logErrorStack(err);
             notificationManager.add({
-                title: err.title || 'Unexpected error',
-                message: 'An unexpected error has occurred. ' + instructions,
+                title: err.title || '糟糕,出现意外',
+                    message: '发生了的未意料的错误~. ' + instructions,
                 type: 'danger'
             });
         }

@@ -1,16 +1,25 @@
 <div class="text-center conflicts-text">
     {{#if conflictedFiles}}
+        <!--<h1>Aw, Snap!</h1>-->
         <h1>Aw, Snap!</h1>
 
-        <h3>Portia couldn't deploy the project because there are conflicts with another user's changes</h3>
-        <p>Resolve the conflicts manually by selecting the conflicting files from the left panel to deploy the project.</p>
+
+       <!-- <h3>Portia couldn't deploy the project because there are conflicts with another user's changes</h3>-->
+        <h3>无法部署这个项目，因为与另一个用户的变化有冲突</h3>
+        <!--<p>Resolve the conflicts manually by selecting the conflicting files from the left panel to deploy the project.</p>-->
+        <p>通过从左面板中选择冲突的文件来手动解决冲突，以部署项目</p>
     {{else}}
         <h1>All done</h1>
 
-        <p>
+       <!-- <p>
             All conflicts are resolved, to continue, go back to the
             {{link-to "project page" 'projects.project' projectController.model}}
             and try to deploy again.
+        </p>-->
+         <p>
+            所有的冲突都解决了，继续，回到
+             {{link-to "project page" 'projects.project' projectController.model}}
+             并尝试再次部署。
         </p>
     {{/if}}
 </div>

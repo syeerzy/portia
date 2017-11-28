@@ -9,17 +9,17 @@
         {{#tooltip-container tooltipFor="mode-feedback-icon" tooltipContainer='body' placement='right' as |options|}}
             {{#if (eq options.section 'tooltip')}}
                 {{#if (eq mode 'navigation')}}
-                    Browsing
+                    浏览
                     <p>
-                        You can interact with the web page in this mode.
+                        您可以在此模式中与web页面交互
                     </p>
                 {{else if (eq mode 'data-annotation')}}
-                    Annotating
+                    标注
                     <p>
-                        Click on elements in the sample to create data annotations.
+                        单击样本中的元素以创建数据标注。
                     </p>
                     <p>
-                        Close the sample to switch back to navigating mode.
+                        关闭样本以切换回导航模式。
                     </p>
                 {{/if}}
             {{else}}
@@ -29,7 +29,7 @@
             {{/if}}
         {{/tooltip-container}}
     </span>
-    {{buffered-input placeholder="Enter a website address" value=(mut url) viewValue=(mut editedUrl) autofocus=autofocus autoSelect=true disabled=disabled spellcheck=false onEnterPress=(action 'submit')}}
+    {{buffered-input placeholder="输入采集地址" value=(mut url) viewValue=(mut editedUrl) autofocus=autofocus autoSelect=true disabled=disabled spellcheck=false onEnterPress=(action 'submit')}}
     <span class="input-group-btn">
         <button class="btn btn-default" type="button" disabled={{disabled}} {{action 'submit' url}}>
             <span class="fa {{if loading 'fa-spin fa-refresh' (if (not (eq (or (or editedUrl url) null) browser.url)) 'fa-arrow-right' 'fa-repeat')}}"></span>

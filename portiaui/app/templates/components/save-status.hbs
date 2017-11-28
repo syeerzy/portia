@@ -1,14 +1,14 @@
 {{#tooltip-container tooltipFor=(concat "label-" elementId) tooltipContainer='body' as |tooltip|}}
     {{#if (eq tooltip.section 'tooltip')}}
-        <p class="first">Every change you make is automatically saved by Portia</p>
+        <p class="first">蜘蛛网会自动保存你的修改</p>
     {{else}}
         <span id="label-{{elementId}}" class="label label-{{labelColorClass}}">
             {{#if isSaving}}
-                Saving <span>.</span><span>.</span><span>.</span>
+                保存 <span>.</span><span>.</span><span>.</span>
             {{else if timeSinceLastSave}}
-                Last saved {{timeSinceLastSave}}
+                {{timeSinceLastSave}}保存
             {{else}}
-                Changes are saved automatically
+                自动保存变更
             {{/if}}
         </span>
     {{/if}}

@@ -14,12 +14,12 @@
         {{#list-item-icon-menu icon='vertical-ellipsis' as |options|}}
             <li>
               <a href={{downloadUrl}} target='_blank'>
-                  {{list-item-icon class="icon" icon="download"}}Download as Portia
+                  {{list-item-icon class="icon" icon="download"}}下载蜘蛛网
                 </a>
             </li>
             <li>
               <a href={{downloadCodeUrl}} target='_blank'>
-                  {{list-item-icon class="icon" icon="code"}}Download as Scrapy
+                  {{list-item-icon class="icon" icon="code"}}下载Scrapy
                 </a>
             </li>
             {{#if isCopyingSpider}}
@@ -30,20 +30,20 @@
                   selectProject=(action 'copyToProject' options)
                 }}
             {{else}}
-                {{#options.item value="Copy"
+                {{#options.item value="复制"
                   action=(action 'copySpider') as |value|}}
                     {{list-item-icon class="icon" icon="copy"}}{{value}}
                 {{/options.item}}
             {{/if}}
             {{dropdown-delete
               onDelete=(action 'removeSpider' spider)
-              text='Delete Spider'
+              text='删除蜘蛛'
             }}
         {{/list-item-icon-menu}}
     {{/animation-container}}
 
     {{#animation-container class="icon" hide=(not-eq spider currentSpider) setWidth=false setHeight=false}}
-        {{#tooltip-container tooltipFor=(concat "spider-options-button" (guid spider)) text="Advanced spider options" tooltipContainer='body'}}
+        {{#tooltip-container tooltipFor=(concat "spider-options-button" (guid spider)) text="高级蜘蛛选项" tooltipContainer='body'}}
             {{#link-to 'projects.project.spider' id=(concat "spider-options-button" (guid spider)) bubbles=false}}
                 {{#link-to 'projects.project.spider.options' bubbles=false class="ignore-active"}}
                     {{list-item-icon icon='options'}}

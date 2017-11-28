@@ -4,17 +4,25 @@
     <div class="btn-group" role="group">
         {{#tooltip-container tooltipFor="css-tool-button" placement='left' tooltipContainer='body' as |options| }}
             {{#if (eq options.section 'tooltip')}}
-                Toggle page styling
+                <!--Toggle page styling-->
+            切换页面样式
+<!--
                 <p>
                     When page styling is enabled you see the web page as the page author intended,
                     the same way it would appear in a browser. However, sometimes this makes it hard
                     to select the data that you need, for example if there are overlapping parts of
                     the page or if some parts are hidden.
+
+                    当页面样式启用时，您可以看到页面作者想要的页面，
+                    与在浏览器中显示的方式相同。然而，有时这很难
+                    要选择需要的数据，例如，如果存在重叠部分
+                    页面，或者如果某些部分被隐藏了。
                 </p>
                 <p>
                     You can disable the page styling which will change the look and layout of the
                     page but will force all content within the page to become visible.
-                </p>
+                    您可以禁用页面样式，这将改变外观和布局页面但会迫使页面内的所有内容变得可见。
+                </p>-->
             {{else}}
                 <button id="css-tool-button" type="button" class="btn btn-default {{if cssEnabled 'active'}}" {{action 'toggleCSS'}}>
                     {{icon-button icon='tool-css'}}
@@ -26,8 +34,9 @@
     <div class="btn-group" role="group">
         {{#tooltip-container tooltipFor="magic-tool-button" placement='left' tooltipContainer='body' as |options| }}
             {{#if (eq options.section 'tooltip')}}
-                Magic tool selector
-                <p>
+                <!--Magic tool selector-->
+                工具选择器开关
+                <!--<p>
                     When the magic tool selector is enabled, it will attempt to choose the most
                     useful tool for you automatically, based on the element you are pointing at in
                     the web page.
@@ -39,7 +48,7 @@
                 <p>
                     If you need, you can manually change the tool for the next click, by switching
                     to it using the tool selection buttons.
-                </p>
+                </p>-->
             {{else}}
                 <button id="magic-tool-button" type="button" class="btn btn-default {{if magicToolActive 'active'}}" {{action 'toggleMagicTool'}}>
                     {{icon-button icon='tool-magic'}}

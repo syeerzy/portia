@@ -1,7 +1,7 @@
 {{#if canCreateProjects}}
     <p></p>
     <div class="input-group project-create-input">
-        {{input type="text" class="form-control" value=(mut projectName) placeholder="Create a new project"
+        {{input type="text" class="form-control" value=(mut projectName) placeholder="新建项目"
           enter=(action 'addProject')}}
         <span class="input-group-btn">
             <button type="button" class="btn btn-primary" disabled={{not projectName}} {{action "addProject"}}>
@@ -10,6 +10,6 @@
         </span>
     </div>
     {{#if projects}}
-    <h5>OR</h5>
+    <h5>或者</h5>
     {{/if}}
 {{/if}}

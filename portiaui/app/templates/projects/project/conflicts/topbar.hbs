@@ -1,9 +1,17 @@
 <div class="nav-container topbar-conflicts">
-    <span>Resolving <strong>{{model.file}}</strong></span>
+    <!--<span>Resolving  <strong>{{model.file}}</strong></span>
     {{#unless haveConflicts}}
         <button type="button" class="btn btn-default" {{action 'saveFile'}}>
             <i class="fa fa-icon fa-upload"></i>
             Save File
+        </button>
+    {{/unless}}-->
+
+    <span>解析  <strong>{{model.file}}</strong></span>
+    {{#unless haveConflicts}}
+        <button type="button" class="btn btn-default" {{action 'saveFile'}}>
+            <i class="fa fa-icon fa-upload"></i>
+            保存文件
         </button>
     {{/unless}}
 </div>

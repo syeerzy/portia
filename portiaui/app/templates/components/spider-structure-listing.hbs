@@ -2,34 +2,30 @@
     {{#tree-list-item hasChildren=true as |options|}}
         {{#if (eq options.section "item")}}
             {{#list-item-text class="title"}}
-                Start Pages
+                起始页面
                 {{#help-icon}}
-                    Start Pages
+                    起始页面
                     <p>
-                        Start pages are web pages that a spider will begin its crawl from. It&nbsp;will
-                        then continue to other web pages according to the defined link crawling
-                        rules.
+                        起始页面是蜘蛛从网页开始爬行的网页。它,然后根据定义的链接爬行规则，继续访问其他网页
                     </p>
                     <p>
-                        Start pages also restrict the domains that a spider will crawl. A&nbsp;spider
-                        will never follow a link that goes to a domain not included in the start
-                        pages.
+                        起始页面还限制了爬行器爬行的域,一个蜘蛛永远不会跟随一个链接进入一个不包含在起始页面的域
                     </p>
                     <p>
-                        Without a start page the spider cannot begin crawling.
+                        没有起始页，蜘蛛就无法爬行
                     </p>
                 {{/help-icon}}
             {{/list-item-text}}
             {{#tooltip-container tooltipFor="add-start-url-button" text="Start crawling from the current page" tooltipContainer='body'}}
                 {{#list-item-icon-menu icon='add-dropdown' as |options|}}
-                    {{#options.item value="Add fixed URL"
+                    {{#options.item value="添加确定的URL"
                       action=(chain-actions (action closeOptions) (action 'addStartUrl') options.closeMenu) as |value|}}
                         {{list-item-icon class="icon" icon="url"}}{{value}}
                     {{/options.item}}
-                    {{#options.item value="Add generation URL" action=(chain-actions (action 'addGenerationUrl') options.closeMenu) as |value|}}
+                    {{#options.item value="添加分段URL" action=(chain-actions (action 'addGenerationUrl') options.closeMenu) as |value|}}
                         {{list-item-icon class="icon" icon="url-generated"}}{{value}}
                     {{/options.item}}
-                    {{#options.item value="Add feed URL"
+                    {{#options.item value="添加提要URL"
                       action=(chain-actions (action closeOptions) (action 'addFeedUrl') options.closeMenu) as |value|}}
                         {{list-item-icon class="icon" icon="url-feed"}}{{value}}
                     {{/options.item}}
@@ -38,13 +34,13 @@
         {{else if (eq options.section "subtrees")}}
             {{#tree-list-item hide=spider.startUrls.length as |options|}}
                 {{#list-item-text class="text-center"}}
-                    This spider has no start pages
+                    当前蜘蛛没有起始页
                 {{/list-item-text}}
             {{/tree-list-item}}
             {{#tree-list-item hide=spider.startUrls.length class="help" as |options|}}
                 <div class="alert alert-warning" role="alert">
                     <p>
-                        A spider needs at least one start page to start crawling from.
+                        蜘蛛至少需要一个起始页面才能开始爬行
                     </p>
                 </div>
             {{/tree-list-item}}
@@ -75,7 +71,7 @@
     {{#tree-list-item hasChildren=true as |options|}}
         {{#if (eq options.section "item")}}
             {{#list-item-text class="title"}}
-                Link Crawling
+                抽取链接
             {{/list-item-text}}
         {{else if (eq options.section "subtrees")}}
             {{#tree-list-item as |options|}}
@@ -98,21 +94,18 @@
     {{#tree-list-item hasChildren=true as |options|}}
         {{#if (eq options.section "item")}}
             {{#list-item-text class="title"}}
-                Sample Page{{#animation-container class="inline" hide=currentSample setHeight=false}}s{{/animation-container}}
+                样本页{{#animation-container class="inline" hide=currentSample setHeight=false}}{{/animation-container}}
                 {{#animation-container class="inline" setHeight=false}}
                     {{#help-icon}}
-                        Sample Pages
+                        样本
                         <p>
-                            A sample page is a web page with the data you want to extract annotated.
+                            一个样本是一个web页面，其中包含要抽取的数据
                         </p>
                         <p>
-                            When the spider crawls to a new web page it finds the sample page that is
-                            the best match, and uses it to extract data.
+                            当蜘蛛爬行到一个新的web页面时，它会找到最佳匹配的样本，并使用它来抽取数据
                         </p>
                         <p>
-                            If you see a web page that the spider is having trouble extracting data
-                            from, you can create a new sample page from that web page to improve the
-                            extraction.
+                            如果您看到一个web页面，蜘蛛很难从该web页面抽取数据，您可以从该web页面创建一个新的样本来改进抽取
                         </p>
                     {{/help-icon}}
                 {{/animation-container}}
@@ -120,25 +113,24 @@
             {{#if currentSample}}
                 {{#animation-container}}
                     {{#link-to 'projects.project.spider' spider}}
-                        Show all samples
+                        显示所有样本
                     {{/link-to}}
                 {{/animation-container}}
             {{else}}
-                {{#tooltip-container tooltipFor="add-sample-button" text="Create a new sample from the current page" tooltipContainer='body'}}
+                {{#tooltip-container tooltipFor="add-sample-button" text="从当前页面创建一个新的样本" tooltipContainer='body'}}
                     {{list-item-icon id="add-sample-button" icon='add' disabled=(not canAddSample) action=(action 'addSample')}}
                 {{/tooltip-container}}
             {{/if}}
         {{else if (eq options.section "subtrees")}}
             {{#tree-list-item hide=(or spider.samples.isPending spider.samples.length) as |options|}}
                 {{#list-item-text class="text-center"}}
-                    This spider has no sample pages
+                    当前蜘蛛没有样本页
                 {{/list-item-text}}
             {{/tree-list-item}}
             {{#tree-list-item hide=(or spider.samples.isPending spider.samples.length) class="help" as |options|}}
                 <div class="alert alert-info" role="alert">
                     <p>
-                        Navigate to a web page that has the data you need, and create a new sample
-                        page to begin annotating the data.
+                        导航到有您需要的数据的web页面，并创建一个新的样本来开始标注数据
                     </p>
                 </div>
             {{/tree-list-item}}
@@ -153,7 +145,7 @@
                     {{#list-item-icon-menu icon='vertical-ellipsis' as |options|}}
                         {{dropdown-delete
                           onDelete=(action 'removeSample' sample)
-                          text='Delete Sample'
+                          text='删除样本'
                         }}
                     {{/list-item-icon-menu}}
 

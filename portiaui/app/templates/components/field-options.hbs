@@ -2,18 +2,18 @@
 <form {{action "save" on="change"}}>
     <div class="checkbox">
         <label>
-            {{input type="checkbox" name="required" checked=(mut field.required)}} Required
+            {{input type="checkbox" name="required" checked=(mut field.required)}} 必填项
         </label>
         {{#help-icon}}
-            Only extract items that have this field. All samples using this data format will be affected
+            只抽取有这个字段的项。所有使用该数据格式的样本都会受到影响
         {{/help-icon}}
     </div>
     <div class="checkbox">
         <label>
-            {{input type="checkbox" name="vary" checked=(mut field.vary)}} Vary
+            {{input type="checkbox" name="vary" checked=(mut field.vary)}} 变化
         </label>
         {{#help-icon}}
-            The value of this field will be ignored when checking for duplicate items
+            当检查重复项时，这个字段的值将被忽略
         {{/help-icon}}
     </div>
 </form>

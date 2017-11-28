@@ -15,10 +15,10 @@ export default Ember.Controller.extend({
         edit: 'tool-multiple'
     },
     selectionModeText: {
-        select: 'Select an existing annotation',
-        add: 'Add a new annotation',
-        remove: 'Remove an annotation',
-        edit: 'Add/remove extra elements from an existing annotation'
+        select: '选择一个现有的标注',
+        add: '新增一个标注',
+        remove: '删除一个标注',
+        edit: '从现有的标注中添加/删除额外的元素'
     },
     selectionModeIds: {
         select: 'tool-select-button',

@@ -11,13 +11,13 @@
 {{else if isObject}}
     {{#if isConflict}}
         {{#if isResolved}}
-            <span style="color:#2d882d;font-weight:bold">RESOLVED</span>
+            <span style="color:#2d882d;font-weight:bold">转变</span>
             <div {{action 'reset'}} style="margin:5px 0px 0px 40px;background:#AEA;" class="conflict-option">
-                <span style="font-weight:bold;color:#2d882d;margin:5px"> [CHANGE SELECTION] </span>
+                <span style="font-weight:bold;color:#2d882d;margin:5px"> [改变选择] </span>
                 {{resolvedRepr}},
             </div>
         {{else}}
-            <span style="color:#ff3939;font-weight:bold">CONFLICT</span>
+            <span style="color:#ff3939;font-weight:bold">冲突</span>
             <div style="margin-left:40px;">
                 {{#each conflictValues as |value|}}
                     <div class="conflict-option {{value.state}}">

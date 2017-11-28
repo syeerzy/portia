@@ -2,29 +2,27 @@
     {{#tree-list-item hasChildren=true as |options|}}
         {{#if (eq options.section "item")}}
             {{#list-item-text class="title"}}
-                Fields
+                字段
                 {{#help-icon}}
-                    Fields
+                    字段
                     <p>
-                        A field describes the type of a value that you want to extract.
+                        字段描述您想要抽取的值的类型
                     </p>
                     <p>
-                        Sample pages map the elements of a web page to the individual fields of a
-                        data format.
+                        示例页面将web页面的元素映射到数据格式的各个字段
                     </p>
                     <p>
-                        You can create fields in advance, but you can also create them later, while
-                        annotating the data on a web page.
+                        您可以提前创建字段，但是您也可以在稍后创建它们，同时在web页面上标注数据.
                     </p>
                 {{/help-icon}}
             {{/list-item-text}}
-            {{#tooltip-container tooltipFor="add-field-button" text="Add field" tooltipContainer='body'}}
+            {{#tooltip-container tooltipFor="add-field-button" text="添加字段" tooltipContainer='body'}}
                 {{list-item-icon id="add-field-button" icon='add' action=(action 'addField')}}
             {{/tooltip-container}}
         {{else if (eq options.section "subtrees")}}
             {{#tree-list-item hide=(or schema.fields.isPending schema.fields.length) as |options|}}
                 {{#list-item-text class="text-center"}}
-                    This data format has no fields
+                    这个数据格式没有字段
                 {{/list-item-text}}
             {{/tree-list-item}}
             {{#each schema.fields as |field|}}
@@ -34,7 +32,7 @@
                         {{list-item-icon icon=field.type}}
                         {{list-item-editable value=(mut field.name) editing=(mut field.new) onChange=(action 'saveField' field) validate=(action 'validateFieldName' field)}}
                         {{#list-item-field-type field=field}}
-                            Change field type
+                            修改字段类型
                         {{/list-item-field-type}}
                         {{#link-to 'projects.project.schema.field.options' field bubbles=false class="ignore-active"}}
                             {{list-item-icon icon='options'}}

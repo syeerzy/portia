@@ -62,7 +62,7 @@ export default Ember.Service.extend({
 
     _setExtraction(data) {
         if (this.get('noSamples')) {
-            this.failExtraction('Samples are needed for extracting data.');
+            this.failExtraction('抽取数据需要先有样本.');
             return;
         }
 

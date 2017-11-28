@@ -2,23 +2,23 @@
     {{#tree-list-item hasChildren=true as |options|}}
         {{#if (eq options.section "item")}}
             {{#list-item-text class="title"}}
-                Extractors
+                抽取器
             {{/list-item-text}}
             {{#list-item-icon-menu icon='add-dropdown' as |dropdown|}}
-                {{#dropdown.header}}Add field type extractor{{/dropdown.header}}
+                {{#dropdown.header}}添加字段类型抽取器{{/dropdown.header}}
                 {{#each types as |type|}}
                     {{#dropdown.item action=(chain-actions (action 'addTypeExtractor' type) dropdown.closeMenu) as |value|}}
                         {{list-item-icon class="icon" icon=type}}{{type}}
                     {{/dropdown.item}}
                 {{/each}}
-                {{#dropdown.header}}Add regular expression extractor{{/dropdown.header}}
+                {{#dropdown.header}}添加正则表达式抽取器{{/dropdown.header}}
                 {{#each regexExtractors as |extractor|}}
                     {{#dropdown.item action=(chain-actions (action 'addRegexExtractor' extractor) dropdown.closeMenu) as |value|}}
                         {{list-item-icon class="icon" icon="regular expression"}}{{extractor.value}}
                     {{/dropdown.item}}
                 {{/each}}
                 {{#dropdown.item action=(chain-actions (action 'addNewRegexExtractor') dropdown.closeMenu) as |value|}}
-                    {{list-item-icon class="icon" icon="add"}}New regular expression
+                    {{list-item-icon class="icon" icon="add"}}新的正则表达式
                 {{/dropdown.item}}
             {{/list-item-icon-menu}}
         {{else if (eq options.section "subtrees")}}

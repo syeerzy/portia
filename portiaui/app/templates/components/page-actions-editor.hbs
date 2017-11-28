@@ -11,7 +11,7 @@
         </div>
         <div class="btn-center">
             <button {{action "addContinue"}} class="btn btn-primary fa fa-icon fa-plus">
-                Continue
+                继续
             </button>
         </div>
     </div>
@@ -19,14 +19,14 @@
 <form class="form-horizontal">
     {{#if (eq editing.type "wait")}}
         <div class="form-group form-group-sm">
-            <label for="actionType" class="col-sm-4 control-label">Timeout (ms)</label>
+            <label for="actionType" class="col-sm-4 control-label">超时 (ms)</label>
             <div class="col-sm-7">
                 {{input value=editing.timeout pattern="^[0-9]+$" class="form-control" }}
             </div>
         </div>
     {{else}}
         <div class="form-group form-group-sm">
-            <label for="actionType" class="col-sm-4 control-label">Selector</label>
+            <label for="actionType" class="col-sm-4 control-label">选择器</label>
             <div class="col-sm-7">
                 {{input value=editing.selector class="form-control" }}
             </div>
@@ -34,7 +34,7 @@
     {{/if}}
     {{#if (eq editing.type "set")}}
         <div class="form-group form-group-sm">
-            <label for="actionType" class="col-sm-4 control-label">Value</label>
+            <label for="actionType" class="col-sm-4 control-label">值</label>
             <div class="col-sm-7">
                 {{input value=editing.value class="form-control" }}
             </div>
@@ -42,16 +42,16 @@
     {{/if}}
 </form>
     <div class="form-group form-group-sm">
-        <label for="actionType" class="control-label">Run only in pages matching</label>
+        <label for="actionType" class="control-label">只在页面匹配中运行</label>
         {{input value=editing.accept class="form-control" }}
     </div>
     <div class="form-group form-group-sm">
-        <label for="actionType" class="control-label">Don't run in pages matching</label>
+        <label for="actionType" class="control-label">不要在页面匹配中运行</label>
         {{input value=editing.reject class="form-control" }}
     </div>
     <div class="btn-center">
         <button {{action "back"}} class="btn btn-primary fa fa-icon fa-check">
-            Back
+            回退
         </button>
     </div>
 {{/if}}
@@ -59,7 +59,7 @@
     {{#tree-list}}
         {{#tree-list-item hasChildren=true childsReorderable=true reorder=(action "reorderPageAction") as |options|}}
             {{#if (eq options.section "item")}}
-                {{#list-item-text}} OnLoad {{/list-item-text}}
+                {{#list-item-text}} 加载 {{/list-item-text}}
                 {{list-item-icon icon='add' action=(action "addNew") }}
             {{else if (eq options.section "subtrees")}}
                 {{#each pageActions as |action index|}}
@@ -76,7 +76,7 @@
                     {{/tree-list-item}}
                 {{else}}
                     {{#tree-list-item}}
-                        {{#list-item-text}} No actions have been recorded yet{{/list-item-text}}
+                        {{#list-item-text}} 目前还没有记录行动{{/list-item-text}}
                     {{/tree-list-item}}
                 {{/each}}
             {{/if}}

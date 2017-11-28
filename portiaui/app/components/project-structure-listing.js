@@ -97,9 +97,9 @@ export default Ember.Component.extend({
     addSpiderTooltipText: computed('canAddSpider', {
         get() {
             if (this.get('canAddSpider')) {
-                return 'Create a new Spider';
+                return '创建一个新的蜘蛛';
             } else {
-                return 'You must visit a website before you can create a Spider';
+                return '在创建蜘蛛之前，您必须访问一个网站';
             }
         }
     }),

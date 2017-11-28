@@ -45,7 +45,7 @@ export default Ember.Component.extend({
         if (!current || !last) {
             return null;
         }
-        return moment(last).fromNow();
+        return moment(last).locale('zh-cn').fromNow();
     }),
     labelColorClass: Ember.computed('isSaving', {
         get() {

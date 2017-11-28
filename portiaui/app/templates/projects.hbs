@@ -1,11 +1,10 @@
 <div class="project-list-container">
     <img src="/assets/images/portia-logo.svg" alt="Portia logo">
 
-    <h3>What would you like to work on today?</h3>
+    <h3>新建一个项目</h3>
     {{create-project-button projects=model}}
     {{#if model}}
-        <p>Choose a project from the list below.</p>
-
+        <p>从下面的列表中选择一个项目</p>
         {{project-list projects=model}}
     {{/if}}
 </div>
